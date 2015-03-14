@@ -37,7 +37,7 @@ Setup for a fresh Ubuntu EC2 instance with GPUs:
 curl https://raw.githubusercontent.com/chepyle/datascience-bowl/master/setup.sh | sh
 
 ```
-The system will reboot, we will add the linux headers files for the NVIDIA installation, the version number must be the same as the OS, use `uname -r` to get your version
+The system must reboot, we will add the linux headers files for the NVIDIA installation, the version number must be the same as the OS, use `uname -r` to get your version if there is a problem
 
 ```
 
@@ -61,6 +61,7 @@ To get the data directly from the instance, get the data and sampleSubmision fil
 ```
 unzip train.zip
 unzip test.zip
+unzip sampleSubmission.csv.zip
 ```
 
 LEARN!
