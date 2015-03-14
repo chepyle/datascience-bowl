@@ -7,6 +7,7 @@
 sudo apt-get install -y git
 sudo apt-get install -y curl
 sudo apt-get install -y python-pip
+sudo apt-get install -y ipython
 
 # Install emacs24
 # https://launchpad.net/~cassou/+archive/emacs
@@ -25,7 +26,7 @@ wget https://www.kaggle.com/c/datasciencebowl/download/train.zip
 wget https://www.kaggle.com/c/datasciencebowl/download/test.zip
 unzip train.zip
 unzip test.zip
-
+pip install -r requirements.pip
 pip install -r requirements-gpu.pip
 
 python make_submission.py
