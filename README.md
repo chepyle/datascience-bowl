@@ -10,7 +10,7 @@ based on CXXNet.
 
 * **Setup time**: ~2 mins
 * **Train time**: ~20 mins on a GPU (it could take much longer on a CPU)
-* **Validation score**: 0.76
+* **Validation score**: 0.769
 * **Leaderboard score**: 0.97
 
 
@@ -29,42 +29,48 @@ Here is a quick summary of the submission:
 * Evaluate the multi-class log loss score.
 * Save the predictions in Kaggle's format into a submission file called "submission.csv".
 
-Setup for EC2 instance:
-```
-curl https://raw.githubusercontent.com/chepyle/datascience-bowl/master/setup.sh | sh
-```
 
 Install
 -------
-**CPU instructions**
-```
-pip install -r requirements.pip
-```
-
-**GPU instructions**
-```
-pip install -r requirements-gpu.pip
-```
-
-Data
------
-Let us assume that you have the data downloaded into two folders called train 
-and test. You can do that as follows:
+Setup for a fresh Ubuntu EC2 instance with GPUs:
 
 ```
-wget https://www.kaggle.com/c/datasciencebowl/download/train.zip
-wget https://www.kaggle.com/c/datasciencebowl/download/test.zip
+curl https://raw.githubusercontent.com/chepyle/datascience-bowl/master/setup.sh | sh
+
+```
+The system will reboot, we will add the linux headers files for the NVIDIA installation, the version number must be the same as the OS, use `uname -r` to get your version
+
+```
+
+sudo apt-get install -y linux-source
+sudo apt-get install -y linux-headers-3.13.0-46-generic 
+sudo bash NVIDIA-Linux-x86_64-346.47.run # go through prompts
+
+```
+
+Then install py packages:
+
+```
+cd datascience-bowl
+
+sudo pip install -r requirements-gpu.pip
+```
+Next, get the  graphlab create key from [https://dato.com/products/create/quick-start-guide.html] and follow directions on writing the configruation file 
+
+To get the data directly from the instance, get the data and sampleSubmision files manually using lynx. Once dowloaded extract the archives:
+
+```
 unzip train.zip
 unzip test.zip
 ```
 
-Make submission
----------------
+LEARN!
+------
 
-Now run the following script. The script will create a submission file. It 
-could take around 1 hour depending on how many interations you perform. The
-network can train at around 5k images a second.
+Once the files are downloaded and extracted, run the following script (takes 30mins):
 
 ```
 python make_submission.py
 ```
+
+
