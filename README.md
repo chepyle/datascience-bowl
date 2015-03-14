@@ -29,6 +29,10 @@ Here is a quick summary of the submission:
 * Evaluate the multi-class log loss score.
 * Save the predictions in Kaggle's format into a submission file called "submission.csv".
 
+Setup for EC2 instance:
+```
+./setup.sh
+```
 
 Install
 -------
