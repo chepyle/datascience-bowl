@@ -4,14 +4,7 @@
 
 # Install basics
 
-sudo apt-get install -y git
-sudo apt-get install -y python-pip
-sudo apt-get install -y python-dev
-sudo apt-get install -y ipython
-sudo apt-get install -y unzip
-sudo apt-get install -y zlibc zlib1g zlib1g-dev
-sudo apt-get install -y lynx
-sudo apt-get install -y libjpeg-dev
+sudo apt-get install -y git python-pip python-dev ipython unzip zlibc zlib1g zlib1g-dev lynx libjpeg-dev
 
 # Install emacs24
 # https://launchpad.net/~cassou/+archive/emacs

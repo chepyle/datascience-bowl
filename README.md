@@ -33,7 +33,6 @@ Here is a quick summary of the submission:
 Install
 -------
 Setup for a fresh Ubuntu EC2 instance with GPUs:
-
 ```
 curl https://raw.githubusercontent.com/chepyle/datascience-bowl/master/setup.sh | sh
 
