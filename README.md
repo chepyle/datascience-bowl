@@ -31,7 +31,7 @@ Here is a quick summary of the submission:
 
 Setup for EC2 instance:
 ```
-./setup.sh
+curl https://raw.githubusercontent.com/chepyle/datascience-bowl/master/setup.sh | sh
 ```
 
 Install
